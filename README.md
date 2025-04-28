@@ -1,2 +1,5 @@
-# DP_Final_Project
-This is the final project by Yueran and Kang
+This code implements the Sequence Frequency Puzzle (SFP) algorithm, described in detail in [Apple's paper](https://machinelearning.apple.com/research/learning-with-privacy-at-scale), and the Trie Heavy Hitters (TrieHH) algorithm described in Algorithm 1 of our AISTATS 2020 submission. 
+
+To run simulations, load a terminal and run `run.sh`. The script will download Sentiment140 [from here](https://docs.google.com/file/d/0B04GJPshIjmPRnZManQwWEdTZjg/edit), run `preprocess.py` to preprocess the dataset, and then run `main.py` to generate the F1 score plot that compares the performance of SFP and TrieHH. You can change the parameters in `main.py` if you would like to try different privacy parameters.
+
+`dictionary.txt` is intentionally empty. Current simulations will reproduce Figure 4 of our paper. If you would like to run out-of-vocab experiments to reproduce a version of Figure 5, place a list of in-vocab words in `dictionary.txt`. Please place only one word per line. The preprocessing performed in `preprocess.py` will automatically remove all the in-vocab words provided in `dictionary.txt` to form an out-of-vocab dataset. In our paper, we used a dictionary with over 260,000 in-vocab English words, but we cannot publish the dictionary used due to copyright and anonymity issues.
